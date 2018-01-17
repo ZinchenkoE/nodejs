@@ -16,18 +16,36 @@ var fs = require('fs');
 //     '8412f2faa3baf0538d8cb5ee514aa3af.mp4',
 // ];
 
+var a = [
+    'f0ed5dccb42f9f4d75bd266402c08801.mp4',
+    '24112102807ac47a1ee4e866eecef9fb.mp4',
+    '679e7507a5dab885a24892e3ed864e9e.mp4',
+    '4ac014b5e5bf713b0d2d82208ee40309.mp4',
+    '50e4f9b609338e4f38702d69ad7f48e6.mp4',
+    '6adfb96af970dad6c6c14429a8eb02c1.mp4',
+    '2ba7da47632149eefe4b715e22877a32.mp4',
+    'e6722df3e81da753b6159c3f8a5dae68.mp4',
+    'd373a660280f53a3fa1c1589d5d7940c.mp4',
+    '49690e0fe51f9dee5c044ccfea4bbd8b.mp4',
+];
 
-const dir = '/home/evgenii/Загрузки/';
+
+// var a = [
+//     '111.txt',
+// ];
 
 
-// a.forEach((item, i) => {
-//     fs.rename(dir + `HowIMetYourMother_02_${i}.mp4`, `${dir}renamed/HowIMetYourMother_02_${i + 11}.mp4`, function(err) {
-//         if ( err ) console.log('ERROR: ' + err);
-//     });
-// });
+// const dir = '/home/evgenii/Загрузки/';
+const dir = 'C:\\Users\\Zinchenko\\Downloads\\';
 
-const t = +new Date();
-fs.createReadStream(dir + '8412f2faa3baf0538d8cb5ee514aa3af.mp4')
-    .pipe(fs.createWriteStream(dir + 'HowIMetYourMother_02_22.mp4'));
 
-console.log(+new Date - t);
+a.forEach((item, i) => {
+    fs.rename(dir + item, dir + `HowIMetYourMother_02_0${i + 1}.mp4`, function(err) {
+        if ( err ) console.log('ERROR: ' + err);
+    });
+
+    // fs.createReadStream(dir + item)
+    //     .pipe(fs.createWriteStream(dir + `renamed\\HowIMetYourMother_02_0${i + 1}.mp4`));
+});
+
+
